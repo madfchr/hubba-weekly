@@ -1,0 +1,17 @@
+<h1>All Hubba Weekly</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Industries</th>
+    <th>Common</th>
+  </tr>
+
+  <% @emails.each do |email| %>
+    <tr>
+      <td><%= email.name %></td>
+      <td><%= email.industries %></td>
+      <td><%= email.common %></td>
+    </tr>
+  <% end %>
+</table>
