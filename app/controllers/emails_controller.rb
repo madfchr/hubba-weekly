@@ -12,6 +12,10 @@ class EmailsController < ApplicationController
     @email = Email.new
   end
 
+  def edit
+    @email = Email.find(params[:id])
+  end
+
   def create
     @email = Email.new(email_params)
 
@@ -19,6 +23,16 @@ class EmailsController < ApplicationController
       redirect_to @email
     else
       render 'new'
+    end
+  end
+
+  def update
+    @email = Email.find(params[:id])
+
+    if @email.update(email_params)
+      redirect_to @email
+    else
+      render 'edit'
     end
   end
 

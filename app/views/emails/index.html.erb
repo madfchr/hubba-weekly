@@ -14,6 +14,8 @@
       <td><%= email.name %></td>
       <td><%= email.industries %></td>
       <td><%= email.common %></td>
+      <td><%= link_to 'Show', email_path(email) %></td>
+      <td><%= link_to 'Edit', edit_email_path(email) %></td>
     </tr>
   <% end %>
 </table>
