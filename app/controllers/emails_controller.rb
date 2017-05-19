@@ -9,13 +9,17 @@ class EmailsController < ApplicationController
   end
 
   def new
+    @email = Email.new
   end
 
   def create
     @email = Email.new(email_params)
 
-    @email.save
-    redirect_to @email
+    if @email.save
+      redirect_to @email
+    else
+      render 'new'
+    end
   end
 
   private
