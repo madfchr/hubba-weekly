@@ -1,19 +1,10 @@
-<h1>All Hubba Weekly</h1>
-
-<%= link_to 'New Hubba Weekly', new_email_path %>
+<h1>Hubba Weekly</h1>
+<p><%= link_to 'New', new_email_path %></p>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Industries</th>
-    <th>Common</th>
-  </tr>
-
   <% @emails.each do |email| %>
     <tr>
       <td><%= email.name %></td>
-      <td><%= email.industries %></td>
-      <td><%= email.common %></td>
       <td><%= link_to 'Show', email_path(email) %></td>
       <td><%= link_to 'Edit', edit_email_path(email) %></td>
     </tr>
