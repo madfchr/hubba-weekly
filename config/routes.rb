@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   get 'index/index'
 
-  resources :emails
+  resources :emails do
+    resources :stories
+  end
+
+  resources :sections do
+    resources :stories
+  end
 
   root 'index#index'
 
