@@ -36,9 +36,16 @@ class EmailsController < ApplicationController
     end
   end
 
+  def destroy
+    @email = Email.find(params[:id])
+    @email.destroy
+
+    redirect_to emails_path
+  end
+
   private
     def email_params
-      params.require(:email).permit(:name, :industries, :common)
+      params.require(:email).permit(:name)
     end
 
 end

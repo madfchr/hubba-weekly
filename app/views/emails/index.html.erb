@@ -7,6 +7,9 @@
       <td><%= email.name %></td>
       <td><%= link_to 'Show', email_path(email) %></td>
       <td><%= link_to 'Edit', edit_email_path(email) %></td>
+      <td><%= link_to 'Destroy', email_path(email),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete this Hubba Weekly?' }  %> </td>
     </tr>
   <% end %>
 </table>
