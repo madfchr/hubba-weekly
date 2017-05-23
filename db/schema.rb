@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523181112) do
+ActiveRecord::Schema.define(version: 20170523181852) do
 
   create_table "emails", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20170523181112) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "section_id"
+    t.integer "email_id"
+    t.index ["email_id"], name: "index_stories_on_email_id"
+    t.index ["section_id"], name: "index_stories_on_section_id"
   end
 
 end
