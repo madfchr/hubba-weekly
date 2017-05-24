@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'index/index'
 
   resources :emails do
-    resources :stories
+    resources :sections
   end
 
   resources :sections do

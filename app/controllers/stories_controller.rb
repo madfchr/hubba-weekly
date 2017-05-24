@@ -17,13 +17,9 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
-
-    if @story.save
-      redirect_to @story
-    else
-      render 'new'
-    end
+    @section = Section.find(params[:section_id])
+    @story = @section.stories.create(story_params)
+    redirect_to section_path(@section)
   end
 
   def update
@@ -45,6 +41,6 @@ class StoriesController < ApplicationController
 
   private
     def story_params
-      params.require(:story).permit(:name)
+      params.require(:story).permit(:url, :description)
     end
 end

@@ -1,4 +1,7 @@
-<h2>Stories for <%= @section.name %></h2>
+<h1>Stories for <%= @section.title %></h1>
+
+<h2>Stories</h2>
+<%= render @section.stories %>
 
 <h2>Add a story:</h2>
 <%= form_for([@section, @section.stories.build]) do |f| %>
