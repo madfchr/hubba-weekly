@@ -1,0 +1,8 @@
+<table>
+  <% @sections.each do |section| %>
+    <tr>
+      <td><%= section.name %></td>
+      <td><%= link_to 'Show', section_path(section) %></td>
+    </tr>
+  <% end %>
+</table>
