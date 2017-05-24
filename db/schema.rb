@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523181852) do
+ActiveRecord::Schema.define(version: 20170524194017) do
 
   create_table "emails", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "done"
+  end
+
+  create_table "emails_sections", id: false, force: :cascade do |t|
+    t.integer "email_id"
+    t.integer "section_id"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -32,6 +37,9 @@ ActiveRecord::Schema.define(version: 20170523181852) do
     t.datetime "updated_at", null: false
     t.integer "section_id"
     t.integer "email_id"
+    t.string "url"
+    t.string "string"
+    t.string "description"
     t.index ["email_id"], name: "index_stories_on_email_id"
     t.index ["section_id"], name: "index_stories_on_section_id"
   end

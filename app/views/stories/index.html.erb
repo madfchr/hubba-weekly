@@ -1,0 +1,12 @@
+<table>
+  <% @stories.each do |story| %>
+    <tr>
+      <td><%= story.name %></td>
+      <td><%= link_to 'Show', story_path(story) %></td>
+      <td><%= link_to 'Edit', edit_story_path(story) %></td>
+      <td><%= link_to 'Destroy', story_path(story),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete this Story?' }  %> </td>
+    </tr>
+  <% end %>
+</table>

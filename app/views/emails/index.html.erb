@@ -5,7 +5,6 @@
   <% @emails.each do |email| %>
     <tr>
       <td><%= email.name %></td>
-      <td><%= check_box_tag "email_#{email.id}", "#{email.done}", email.done?, disabled: "#{email.done?}" %></td>
       <td><%= link_to 'Show', email_path(email) %></td>
       <td><%= link_to 'Edit', edit_email_path(email) %></td>
       <td><%= link_to 'Destroy', email_path(email),
