@@ -1,13 +1,13 @@
-<h2>Stories for <%= @section.name %></h2>
+<h1><%= @section.name %></h1>
 
-<h2>Add a story:</h2>
+<h2>Story #1</h2>
 <%= form_for([@section, @section.stories.build]) do |f| %>
   <p>
-    <%= f.label :url %><br>
+    <%= f.label :story_url %><br>
     <%= f.text_field :url %>
   </p>
   <p>
-    <%= f.label :description %><br>
+    <%= f.label :story_description %><br>
     <%= f.text_area :description %>
   </p>
   <p>
@@ -15,5 +15,34 @@
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Back', sections_path %>
+<h2>Story #2</h2>
+<%= form_for([@section, @section.stories.build]) do |f| %>
+  <p>
+    <%= f.label :story_url %><br>
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :story_description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<h2>Story #3</h2>
+<%= form_for([@section, @section.stories.build]) do |f| %>
+  <p>
+    <%= f.label :story_url %><br>
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :story_description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', emails_path(@email) %>
